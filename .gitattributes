@@ -1,3 +1,4 @@
 src/css/* linguist-vendored
 src/scss/* linguist-vendored
+src/scss/custom/* linguist-vendored
 src/resource/* linguist-vendored
