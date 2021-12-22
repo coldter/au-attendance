@@ -1,0 +1,3 @@
+./src/css/* linguist-vendored
+./src/scss/* linguist-vendored
+./src/resource/* linguist-vendored
