@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Attendance to WhatsApp</title>
+	<meta name="description" content="A basic scripted page that sends attendee list as WhatsApp message...">
+	<link rel="shortcut icon" href="./resource/img/icon.png">
+
+	<!-- Pico.css -->
+	<link rel="stylesheet" href="./css/pico.css">
+
+	<!-- Custom template-->
+	<link rel="stylesheet" href="css/custom.min.css">
+</head>
+
+<body>
+
+	<!-- Header -->
+	<header class="container">
+		<hgroup>
+			<h1>Attendance to WhatsApp</h1>
+			<h2>A basic scripted page that sends attendee list as WhatsApp message...</h2>
+		</hgroup>
+		<nav>
+			<ul>
+				<li>Theme:</li>
+				<li><a href="#" data-theme-switcher="auto">Auto</a></li>
+				<li><a href="#" data-theme-switcher="light">Light</a></li>
+				<li><a href="#" data-theme-switcher="dark">Dark</a></li>
+			</ul>
+		</nav>
+	</header><!-- ./ Header -->
+
+	<!-- Main -->
+	<main class="container">
+
+		<div class="grid">
+
+			<!-- Checkboxes -->
+			<fieldset>
+				<div class="grid">
+					<input type="reset" value="Clear !" onclick="event.preventDefault()" class="clear"> <input type="submit" value="SelectAll" onclick="event.preventDefault()" class="selectall">
+				</div>
+				<legend><strong>Check the absentees' Roll No.:</strong></legend>
+					<article style="margin: 0px;" class="article" aria-busy="false">
+						<div class="listfield">
+
+						</div>
+					</article>
+			</fieldset>
+
+		</div>
+		
+		<button type="submit" class="contrast send" aria-busy="false" onclick="event.preventDefault()">Send WhatsApp</button>
+	
+	</main><!-- ./ Main -->
+
+	<!-- Footer -->
+	<footer class="container">
+		<small>Built with PicoCss • <a href="https://github.com/coldter" target="_blank">GitHub</a> </small>
+	</footer><!-- ./ Footer -->
+
+	<!-- js -->
+	<script type="text/javascript" src="./js/script.js"></script>
+	<!-- Minimal theme switcher -->
+	<script src="./js/minimal-theme-switcher.js"></script>
+
+</body>
+
+</html>
