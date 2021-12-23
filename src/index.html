@@ -40,13 +40,14 @@
 
 			<!-- Checkboxes -->
 			<fieldset>
-				<div class="grid">
+				<div class="grid btselect">
 					<input type="reset" value="Clear !" onclick="event.preventDefault()" class="clear"> <input type="submit" value="SelectAll" onclick="event.preventDefault()" class="selectall">
 				</div>
-				<legend><strong>Check the absentees' Roll No.:</strong></legend>
+				<legend><strong class="legendtitle"></strong></legend>
 					<article style="margin: 0px;" class="article" aria-busy="false">
 						<div class="listfield">
-
+         		 <input type="number" id="stStrength" name="number" placeholder="Number">
+							<button class="btstrength"><strong>Go</strong></button>
 						</div>
 					</article>
 			</fieldset>

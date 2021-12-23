@@ -1,23 +1,63 @@
+//DOM selections...!
 const field = document.querySelector('.listfield')
 const send = document.querySelector('.send')
 const clear = document.querySelector('.clear')
 const all = document.querySelector('.selectall')
+const btsel = document.querySelector('.btselect')
+const legendtitle = document.querySelector('.legendtitle')
+const btstrength = document.querySelector('.btstrength')
+const stStrength = document.querySelector('#stStrength')
 
 let absentee = ''
 
+// will ask for total strength and will rander that much checkbox
+function Init() {
+	
+	// hiding stuff
+	btsel.style.display = 'none'
+	send.style.display = 'none'
 
-// Randering 100 checkbox tags
-let entries = ''
+	//getting the strength:
+	legendtitle.innerHTML = "Enter the strength :"
 
-for (let i = 1; i <= 100; i++) {
-	entries += `<label for="${i}">
-	<input type="checkbox" id="${i}" name="rollno${i}" value="${i}">
-	${i}
-</label>`
+	
+	function putCheckboxes() {
+		//checking the entered value
+		if(stStrength.value > 0 && stStrength.value < 1000) {
+			
+			//showing the hiden stuff
+			btsel.style.display = 'flex'
+			send.style.display = 'block'
+			
+			//changign the legend
+			legendtitle.innerHTML = "Check the absentees' Roll No.:"
+
+			//values
+			let st = stStrength.value
+			let entries = ''
+
+			for (let i = 1; i <= st; i++) {
+				entries += `<label for="${i}">
+				<input type="checkbox" id="${i}" name="rollno${i}" value="${i}">
+				${i}
+			</label>`
+			}
+
+			field.innerHTML = entries
+
+		}
+	}
+
+	//strength getting events...
+	btstrength.addEventListener('click', putCheckboxes)
+	stStrength.addEventListener('keyup', (e) => {
+		if(e.keyCode === 13) {
+			e.preventDefault();
+	
+			btstrength.click();
+		}
+	})
 }
-
-field.innerHTML = entries
-
 
 //clear button clikc event
 clear.addEventListener('click', ()=> {
@@ -79,7 +119,7 @@ send.addEventListener('click', ()=> {
 	//whatsApp msg string
 	const dt = new Date()
 	const msgTitle = `_${dt.getDate()}/${dt.getMonth()}/${dt.getFullYear()}_ \n::_*Absentee List*_::\n\n`
-	const msgFooter = `\n\`\`\`taken at ${new Date().toLocaleTimeString('en-US', { hour: 'numeric', hour12: true, minute: 'numeric' })} on atmiya.cf\`\`\` `
+	const msgFooter = `\n\`\`\`taken at ${new Date().toLocaleTimeString('en-US', { hour: 'numeric', hour12: true, minute: 'numeric' })}\`\`\` `
 
 	//calling whatsapp api
 	const linkSource = `whatsapp://send?text=${encodeURI(msgTitle+absentee+msgFooter)}`
@@ -93,3 +133,7 @@ send.addEventListener('click', ()=> {
 	//clearing selection after sending
 	clear.click()
 })
+
+
+
+Init()
